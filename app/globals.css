@@ -1,0 +1,74 @@
+:root {
+ /* cores */
+ --Color-text: #222222;
+ --Color-text-muted: #393D57;
+ --Color-text-faint: #7E7E7E;
+ --Color-Background: #CACACA;
+ --Color-Surface: #E6E6E6;
+ --Color-Border: ##707070;
+ --Color-Border-Strong: #707070;
+ --Color-Primary: #195287;
+ --Color-Primary-Strong: #0B1345;
+ --Color-Primary-Soft: #D5D5D5;
+ --Color-Success: #00940A;
+ --Color-Error: #C01315;
+ --Color-Warning: #D2C10B;
+ --Color-Alunos: #01A4B7;
+ --Color-Cursos: #3BBB84;
+ --Color-Funcionarios: #7D7D7D;
+ --Color-Matriculas: #86518E;
+ --Color-Transparente-Surface: rgba(255, 255, 255, 0.2) /* #fffffff33 */;
+
+
+ /* Fontes */
+
+ --Font-Text: var(--font-Saira);
+ --Font-Título: var(--font-Source-Serif-4);
+ --Font-Subtitulo: var(--font-Solway);
+ --Font-Sub-subtitulo: var(--font-inter);
+ --Font-Corpo: var(--font-Saira);
+ --Font-Descriçao: var(--font-Saira);
+ --Font-Explicaçao: var(--font-Saira);
+ --Font-Dados: var(--font-Saira);
+
+  /* Tamanho de Textos */
+
+ --Text-h1: 26px;
+ --Text-h2: 22px;
+ --Text-h3: 20px;
+ --Text-body: 17px;
+ --Text-label: 14px;
+ --Text-Caption: 14px;
+ --Text-data: 14px;
+
+  /* Tamanho de Textos */
+
+ --Font-weight-h1: 700;
+ --Font-weight-h2: 700;
+ --Font-weight-h3: 500;
+ --Font-weight-body: 400;
+ --Font-weight-label: 700;
+ --Font-weight-caption: 400;
+ --Font-weight-data: 400;
+
+  /* Espaçamento */
+
+ --spacing-xs: 4px;
+ --spacing-sm: 8px;
+ --spacing-md: 12px;
+ --spacing-lg: 16px;
+ --spacing-xl: 24px;
+ --spacing-2xl: 32px;
+ --spacing-3xl: 48px;
+
+  /* raio */
+
+ --radius-sm: 4px;
+ --radius-md: 12px;
+ --radius-lg: 16px;
+
+  /* Breakpoints */
+ --breakpoint-tablet: 640px;
+ --breakpoint-desktop: 1024px;
+ 
+}

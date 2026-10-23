@@ -1,0 +1,22 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background);
+}
+.title {
+  display: flex;
+}
+.subTitle {
+  display: flex;
+}
+.h1 {
+  display: flex;
+}
+.h2 {
+  display: flex;
+}
+.link {
+  display: flex;
+}
