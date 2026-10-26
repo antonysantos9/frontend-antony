@@ -1,22 +1,256 @@
 .main {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-background);
+  min-height: 100vh;
+  padding: 15px 20px;
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    135deg,
+    #e8e5e5 0%,
+    #ded8d9 50%,
+    #d4c8cb 100%
+  );
+
+  font-family: var(--Font-Text);
+  color: #393236;
 }
+
+/* Cartão principal */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 25px 32px 16px;
+  box-sizing: border-box;
+
+  background-color: #f8f6f5;
+  border: 1px solid #e2d7d9;
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(83, 36, 49, 0.10);
+}
+
+/* Cabeçalho */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
 .title {
-  display: flex;
+  margin: 0;
+  color: #702c40;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
+
 .subTitle {
-  display: flex;
+  margin: 3px 0 0;
+  color: #81747a;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
+
+/* Divisor */
+
+.divider {
+  width: 45px;
+  height: 3px;
+  margin: 0 auto 20px;
+  background-color: #8b4659;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Conteúdo */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .h1 {
-  display: flex;
+  margin: 0 0 7px;
+  color: #49232f;
+  font-size: 23px;
+  font-weight: 700;
+  text-align: center;
 }
+
 .h2 {
-  display: flex;
+  margin: 0 0 20px;
+  color: #81767a;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
 }
-.link {
+
+/* Formulário */
+
+.form {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label {
+  margin: 0 0 6px;
+  color: #59434a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  height: 42px;
+  margin-bottom: 15px;
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  background-color: #eeebea;
+  color: #393236;
+
+  border: 1px solid #d9ced1;
+  border-radius: 8px;
+  outline: none;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  transition: border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.input::placeholder {
+  color: #a49a9e;
+}
+
+.input:focus {
+  background-color: #fff;
+  border-color: #804054;
+  box-shadow: 0 0 0 3px rgba(128, 64, 84, 0.10);
+}
+
+/* Esqueceu a senha */
+
+.link {
+  align-self: flex-end;
+  margin: -3px 0 18px;
+  color: #824357;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #542032;
+  text-decoration: underline;
+}
+
+/* Botão */
+
+.button {
+  width: 100%;
+  height: 43px;
+
+  background: linear-gradient(135deg, #824357, #68283d);
+  color: #fff;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(104, 40, 61, 0.15);
+
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #71364a, #542032);
+  transform: translateY(-1px);
+}
+
+/* Rodapé */
+
+.footer {
+  margin-top: 20px;
+  padding-top: 12px;
+
+  color: #a09699;
+  border-top: 1px solid #e6dddf;
+
+  font-size: 10px;
+  text-align: center;
+}
+
+/* Celulares */
+
+@media (max-width: 640px) {
+  .main {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 24px 20px 15px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .h1 {
+    font-size: 21px;
+  }
+}
+
+/* Telas com pouca altura */
+
+@media (max-height: 1024px) {
+  .main {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .card {
+    padding-top: 16px;
+    padding-bottom: 12px;
+  }
+
+  .header {
+    margin-bottom: 10px;
+  }
+
+  .divider {
+    margin-bottom: 12px;
+  }
+
+  .h2 {
+    margin-bottom: 12px;
+  }
+
+  .input {
+    height: 36px;
+    margin-bottom: 10px;
+  }
+
+  .link {
+    margin-bottom: 12px;
+  }
+
+  .footer {
+    margin-top: 12px;
+    padding-top: 8px;
+  }
 }
