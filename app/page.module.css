@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   width: 500px;
-  padding: 25px 32px 16px;
+  padding: 25px 25px 45px;
   box-sizing: border-box;
 
   background-color: #f8f6f5;
@@ -60,7 +60,7 @@
 /* Divisor */
 
 .divider {
-  width: 45px;
+  width: 450px;
   height: 3px;
   margin: 0 auto 20px;
   background-color: #8b4659;
@@ -155,32 +155,6 @@
   text-decoration: underline;
 }
 
-/* Botão */
-
-.button {
-  width: 100%;
-  height: 43px;
-
-  background: linear-gradient(135deg, #824357, #68283d);
-  color: #fff;
-
-  border: none;
-  border-radius: 8px;
-
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
-
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(104, 40, 61, 0.15);
-
-  transition: 0.2s ease;
-}
-
-.button:hover {
-  background: linear-gradient(135deg, #71364a, #542032);
-  transform: translateY(-1px);
-}
 
 /* Rodapé */
 

@@ -1,5 +1,7 @@
 import styles from "./page.module.css";
 
+import Button from "@/Components/Button";
+
 export default function Login() {
   return (
     <main className={styles.main}>
@@ -49,9 +51,7 @@ export default function Login() {
               Esqueceu sua senha?
             </p>
 
-            <button className={styles.button} type="submit">
-              Entrar
-            </button>
+            <Button>Entrar</Button>
           </form>
         </section>
 
