@@ -8,9 +8,9 @@
 
   background: linear-gradient(
     135deg,
-    #e8e5e5 0%,
-    #ded8d9 50%,
-    #d4c8cb 100%
+    #ebeaea 0%,
+    #c9c8c8 50%,
+    #aca9ab 100%
   );
 
   font-family: var(--Font-Text);
@@ -78,7 +78,7 @@
 
 .h1 {
   margin: 0 0 7px;
-  color: #49232f;
+  color: #72394b;
   font-size: 23px;
   font-weight: 700;
   text-align: center;
@@ -114,6 +114,7 @@
   margin-bottom: 15px;
   padding: 0 12px;
   box-sizing: border-box;
+  font-family: var(--Font-Dados);
 
   background-color: #eeebea;
   color: #393236;

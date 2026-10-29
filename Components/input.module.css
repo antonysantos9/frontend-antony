@@ -1,1 +1,66 @@
-/* sla mn talvez */
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label */
+.input-label {
+  display: flex;
+  gap: 4px;
+  color: var(--Color-text);
+  font-size: var(--Size-label);
+  font-family: var(--Font-label);
+}
+
+/* Asterisco de campo obrigatório */
+.input-required {
+  color: var(--Color-error);
+}
+
+/* Campo de entrada */
+.input-field {
+  padding: var(--Spacing-sm);
+  background-color: var(--Color-Surface);
+  border: 1px solid var(--Color-Border-Strong);
+  border-radius: var(--Radius-sm);
+  color: var(--Color-text);
+  font-size: var(--Size-data);
+  font-family: var(--Font-data);
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Texto de exemplo dentro do input */
+.input-field::placeholder {
+  color: var(--Color-text-muted);
+}
+
+/* Quando o input está selecionado */
+.input-field:focus {
+  border-color: var(--Color-primary);
+  box-shadow: 0 0 4px 2px rgb(0 0 0 / 50%);
+}
+
+/* Variante arredondada */
+.input-field.input-rounded {
+  border-radius: 9999px;
+}
+
+/* Campo com erro */
+.input-field.input-error {
+  border-color: var(--Color-error);
+}
+
+/* Legenda abaixo do input */
+.input-caption {
+  color: var(--Color-text);
+  font-size: var(--Size-caption);
+  font-family: var(--Font-caption);
+}
+
+/* Texto da mensagem de erro */
+.input-caption.caption-error {
+  color: var(--Color-error);
+}

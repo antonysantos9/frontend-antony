@@ -2,6 +2,8 @@ import styles from "./page.module.css";
 
 import Button from "@/Components/Button";
 
+import { login } from "./actions"
+
 export default function Login() {
   return (
     <main className={styles.main}>
@@ -20,7 +22,7 @@ export default function Login() {
             Gerencie seus dados escolares com segurança e praticidade.
           </h2>
 
-          <form className={styles.form}>
+          <form className={styles.form} action={login}>
             <label className={styles.label} htmlFor="email">
               E-mail
             </label>
@@ -28,6 +30,7 @@ export default function Login() {
             <input
               className={styles.input}
               id="email"
+              name="email"
               type="email"
               placeholder="Digite seu e-mail"
               autoComplete="email"
@@ -41,6 +44,7 @@ export default function Login() {
             <input
               className={styles.input}
               id="senha"
+              name="senha"
               type="password"
               placeholder="Digite sua senha"
               autoComplete="current-password"
@@ -51,7 +55,7 @@ export default function Login() {
               Esqueceu sua senha?
             </p>
 
-            <Button>Entrar</Button>
+            <Button type="submit" >Entrar</Button>
           </form>
         </section>
 
