@@ -1,8 +1,10 @@
+
 import styles from "./page.module.css";
 
 import Button from "@/Components/Button";
 
-import { login } from "./actions"
+import { login } from "./actions";
+import Image from "next/image";
 
 export default function Login() {
   return (
@@ -55,14 +57,55 @@ export default function Login() {
               Esqueceu sua senha?
             </p>
 
-            <Button type="submit" >Entrar</Button>
+            <Button className={styles.Button} type="submit">
+              Entrar
+            </Button>
           </form>
         </section>
 
-        <footer className={styles.footer}>
-          Athena © 2026 — Sistema de gestão escolar
-        </footer>
+        <div className={styles.rodape}>
+          <p>Athena</p>
+          <span>Portal do aluno</span>
+        </div>
       </section>
+
+      <footer className={styles.footer}>
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+         <Image src="/instagram.png" alt="sla" width={30} height={30}/>
+        </a>
+
+        <a
+          href="https://github.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <Image src="/github.png" alt="sla" width={30} height={30}/>
+        </a>
+
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
+         <Image src="/facebook.png" alt="sla" width={30} height={30}/>
+        </a>
+
+        <a
+          href="https://www.whatsapp.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <Image src="/whatsapp.png" alt="sla" width={30} height={30}/>
+        </a>
+      </footer>
     </main>
   );
 }

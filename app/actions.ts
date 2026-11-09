@@ -32,5 +32,5 @@ export async function login(formData: FormData) {
 
   const cookieStore = await cookies();
   cookieStore.set("@gestao-escolar/token", data);
-  redirect("/perfil");
+  redirect("/dashboard");
 }
