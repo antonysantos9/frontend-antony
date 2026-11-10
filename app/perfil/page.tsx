@@ -1,7 +1,13 @@
 
+"use client";
+
+import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 
 export default function Perfil() {
+  const router = useRouter();
+
+  // Dados de exemplo do funcionário
   const funcionario = {
     nome: "Admin",
     cargo: "ADMIN",
@@ -12,107 +18,106 @@ export default function Perfil() {
   };
 
   return (
-    <main className={styles.perfilPage}>
-      <section className={styles.perfilContainer}>
+    <main className={styles.main}>
+      <div className={styles.container}>
+        {/* Botão para voltar ao Dashboard */}
+        <button
+          className={styles.backButton}
+          onClick={() => router.push("/dashboard")}
+        >
+          ← Voltar ao Dashboard
+        </button>
 
-        <header className={styles.perfilHeader}>
+        {/* Cabeçalho */}
+        <header className={styles.header}>
           <div>
-            <h1>Athena</h1>
-            <p>PORTAL DO ALUNO</p>
-          </div>
-
-          <span className={styles.perfilLabel}>
-            Meu perfil
-          </span>
-        </header>
-
-        <div className={styles.perfilDivider} />
-
-        <section className={styles.perfilContent}>
-
-          <div className={styles.perfilTitle}>
-            <h2>Meu perfil</h2>
+            <span className={styles.portal}>ATHENA | PORTAL DO FUNCIONÁRIO</span>
+            <span className={styles.label}>Meu perfil</span>
+            <h1>Perfil</h1>
             <p>Visualize suas informações pessoais.</p>
           </div>
+        </header>
 
-          <div className={styles.perfilCard}>
-
-            <div className={styles.perfilUser}>
-              <div className={styles.perfilAvatar}>
-                {funcionario.nome
-                  .split(" ")
-                  .slice(0, 2)
-                  .map((nome) => nome[0])
-                  .join("")}
-              </div>
-
-              <div className={styles.perfilUserInfo}>
-                <h3>{funcionario.nome}</h3>
-                <span>{funcionario.cargo}</span>
-              </div>
+        {/* Cartão do perfil */}
+        <section className={styles.profileCard}>
+          {/* Identificação */}
+          <div className={styles.profileHeader}>
+            <div className={styles.avatar}>
+              {funcionario.nome.charAt(0).toUpperCase()}
             </div>
 
-            <div className={styles.perfilSection}>
-              <h3>Informações pessoais</h3>
+            <div className={styles.profileName}>
+              <h2>{funcionario.nome}</h2>
+              <span>{funcionario.cargo}</span>
+            </div>
+          </div>
 
-              <div className={styles.perfilGrid}>
-                <div className={styles.perfilField}>
-                  <label>Nome completo</label>
-                  <p>{funcionario.nome}</p>
-                </div>
+          <div className={styles.divider} />
 
-                <div className={styles.perfilField}>
-                  <label>Data de nascimento</label>
-                  <p>{funcionario.nascimento}</p>
-                </div>
+          {/* Informações pessoais */}
+          <div className={styles.section}>
+            <h3>Informações pessoais</h3>
 
-                <div className={styles.perfilField}>
-                  <label>E-mail</label>
-                  <p>{funcionario.email}</p>
-                </div>
+            <div className={styles.infoGrid}>
+              <div className={styles.infoItem}>
+                <span>Nome completo</span>
+                <p>{funcionario.nome}</p>
+              </div>
 
-                <div className={styles.perfilField}>
-                  <label>Telefone</label>
-                  <p>{funcionario.telefone}</p>
-                </div>
+              <div className={styles.infoItem}>
+                <span>E-mail</span>
+                <p>{funcionario.email}</p>
+              </div>
 
-                <div className={`${styles.perfilField} ${styles.perfilFull}`}>
-                  <label>Endereço</label>
-                  <p>{funcionario.endereco}</p>
-                </div>
+              <div className={styles.infoItem}>
+                <span>Telefone</span>
+                <p>{funcionario.telefone}</p>
+              </div>
+
+              <div className={styles.infoItem}>
+                <span>Data de nascimento</span>
+                <p>{funcionario.nascimento}</p>
+              </div>
+
+              <div className={styles.infoItem}>
+                <span>Endereço</span>
+                <p>{funcionario.endereco}</p>
               </div>
             </div>
+          </div>
 
-            <div className={`${styles.perfilSection} ${styles.perfilAccess}`}>
-              <h3>Informações de acesso</h3>
+          <div className={styles.divider} />
 
-              <div className={styles.perfilGrid}>
-                <div className={styles.perfilField}>
-                  <label>Tipo de usuário</label>
-                  <p>{funcionario.cargo}</p>
-                </div>
+          {/* Informações de acesso */}
+          <div className={styles.section}>
+            <h3>Informações de acesso</h3>
 
-                <div className={styles.perfilField}>
-                  <label>Senha</label>
-                  <p>••••••••••</p>
-                </div>
+            <div className={styles.infoGrid}>
+              <div className={styles.infoItem}>
+                <span>Cargo</span>
+                <p>{funcionario.cargo}</p>
+              </div>
+
+              <div className={styles.infoItem}>
+                <span>Senha</span>
+                <p>••••••••••</p>
               </div>
             </div>
+          </div>
 
-            <div className={styles.perfilActions}>
-              <button type="button" className={styles.perfilEdit}>
-                Editar perfil
-              </button>
-            </div>
-
+          {/* Botão editar */}
+          <div className={styles.buttonContainer}>
+            <button className={styles.editButton}>
+              Editar perfil
+            </button>
           </div>
         </section>
 
-        <footer className={styles.perfilFooter}>
-          <p>© 2026 Athena - Sistema de Gestão Escolar</p>
+        {/* Rodapé */}
+        <footer className={styles.footer}>
+          © 2026 Athena - Sistema de Gestão Escolar
         </footer>
-
-      </section>
+      </div>
     </main>
   );
 }
