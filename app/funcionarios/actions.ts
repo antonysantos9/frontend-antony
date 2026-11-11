@@ -50,14 +50,16 @@ export async function createFuncionario(formData: FormData) {
 
     // Dados recebidos do formulário
     const funcionario = {
-        nome: formData.get("nome"),
-        email: formData.get("email"),
-        cargo: formData.get("cargo"),
-        nascimento: formData.get("nascimento"),
-        senha: formData.get("senha"),
-        telefone: formData.get("telefone"),
-        endereco: formData.get("endereco"),
-    };
+    nome: formData.get("nome"),
+    cpf: formData.get("cpf"),
+    email: formData.get("email"),
+    nascimento: formData.get("nascimento"),
+    Sexo: formData.get("sexo"),
+    cargo: formData.get("cargo"),
+    endereco: formData.get("endereco"),
+    telefone: formData.get("telefone") ? +formData.get("telefone")! : null,
+    senha: formData.get("senha"),
+};
 
     try {
         const response = await fetch(`${process.env.API_URL}/funcionarios`, {
@@ -72,28 +74,32 @@ export async function createFuncionario(formData: FormData) {
         });
 
         // Recebe a resposta da API
-        const texto = await response.text();
+       // Recebe a resposta da API
+const texto = await response.text();
 
-        let data: { erro?: string; message?: string } = {};
+console.log("STATUS DA API:", response.status);
+console.log("RESPOSTA DA API:", texto);
 
-        try {
-            data = texto ? JSON.parse(texto) : {};
-        } catch {
-            data = {};
-        }
+let data: { erro?: string; message?: string } = {};
 
-        // Verifica se ocorreu algum erro
-        if (!response.ok) {
-            return {
-                sucesso: false,
-                erro: data.erro || data.message || "Não foi possível cadastrar o funcionário."
-            };
-        }
+try {
+    data = texto ? JSON.parse(texto) : {};
+} catch {
+    data = {};
+}
 
-        return {
-            sucesso: true,
-            erro: ""
-        };
+// Verifica se ocorreu algum erro
+if (!response.ok) {
+    return {
+        sucesso: false,
+        erro: data.erro || data.message || texto || "Não foi possível cadastrar o funcionário."
+    };
+}
+
+return {
+    sucesso: true,
+    erro: ""
+};
 
     } catch (e) {
         console.error(e);

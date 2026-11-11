@@ -95,6 +95,17 @@ export default function ModalFuncionario({
                         </div>
 
                         <div className={styles.field}>
+                            <label>CPF</label>
+
+                            <input
+                                name="cpf"
+                                type="text"
+                                placeholder="000.000.000-00"
+                                required
+                            />
+                        </div>
+
+                        <div className={styles.field}>
                             <label>E-mail</label>
 
                             <input
@@ -103,6 +114,28 @@ export default function ModalFuncionario({
                                 placeholder="funcionario@email.com"
                                 required
                             />
+                        </div>
+
+                        <div className={styles.field}>
+                            <label>Sexo</label>
+
+                            <select
+                                name="sexo"
+                                defaultValue=""
+                                required
+                            >
+                                <option value="" disabled>
+                                    Selecione
+                                </option>
+
+                                <option value="M">
+                                    Masculino
+                                </option>
+
+                                <option value="F">
+                                    Feminino
+                                </option>
+                            </select>
                         </div>
 
                         <div className={styles.field}>

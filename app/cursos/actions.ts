@@ -52,7 +52,7 @@ export async function createCurso(formData: FormData) {
     const curso = {
         nome: formData.get("nome"),
         descricao: formData.get("descricao"),
-        cargaHoraria: formData.get("cargaHoraria"),
+        cargaHoraria: formData.get("cargaHoraria") ? +formData.get("cargaHoraria")! : null,
     };
 
     try {

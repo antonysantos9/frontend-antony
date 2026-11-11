@@ -103,7 +103,7 @@ export async function createMatricula(formData: FormData) {
     // Dados recebidos do formulário
     const matricula = {
         alunoId: Number(formData.get("alunoId")),
-        cursoId: Number(formData.get("cursoId")),
+        cursoId: Number(formData.get("cursosId")),
         data: formData.get("data"),
     };
 

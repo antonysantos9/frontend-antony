@@ -1,6 +1,7 @@
 
 "use server";
 
+import { refresh, revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 
 // LISTAR ALUNOS
@@ -55,7 +56,7 @@ export async function createAluno(formData: FormData) {
         nome: formData.get("nome"),
         email: formData.get("email"),
         nascimento: formData.get("nascimento"),
-        telefone: formData.get("telefone"),
+        telefone: formData.get("telefone") ? +formData.get("telefone")! : null,
         endereco: formData.get("endereco"),
         sexo: formData.get("sexo"),
     };
@@ -74,7 +75,7 @@ export async function createAluno(formData: FormData) {
 
 
         // Recebe a resposta da API
-        const texto = await response.text();
+        const texto = await response.json();
 
         let data: { erro?: string; message?: string } = {};
 
@@ -93,6 +94,7 @@ export async function createAluno(formData: FormData) {
             };
         }
 
+        revalidateTag("pegarListaAlunos", "max")
         return {
             sucesso: true,
             erro: ""

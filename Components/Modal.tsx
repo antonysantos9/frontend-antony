@@ -1,13 +1,13 @@
 
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ModalAlunos.module.css";
 import { createAluno } from "@/app/alunos/actions";
 
 interface ModalAlunoProps {
     fecharModal: () => void;
-    aoCadastrar: () => Promise<void>;
+    aoCadastrar: () => void;
 }
 
 export default function ModalAluno({
@@ -18,13 +18,13 @@ export default function ModalAluno({
     const [carregando, setCarregando] = useState(false);
     const [erro, setErro] = useState("");
 
-    async function cadastrarAluno(e: FormEvent<HTMLFormElement>) {
-        e.preventDefault();
+    useEffect(() => {
+    console.log("MODAL FOI MONTADO!");
+}, []);
 
+    async function cadastrarAluno(formData: FormData) {
         setCarregando(true);
         setErro("");
-
-        const formData = new FormData(e.currentTarget);
 
         try {
             const resultado = await createAluno(formData);
@@ -34,7 +34,7 @@ export default function ModalAluno({
                 return;
             }
 
-            await aoCadastrar();
+            aoCadastrar();
             fecharModal();
 
         } catch (error) {
@@ -79,7 +79,7 @@ export default function ModalAluno({
                 </header>
 
                 {/* Formulário */}
-                <form onSubmit={cadastrarAluno}>
+                <form action={cadastrarAluno}>
 
                     <div className={styles.grid}>
 
