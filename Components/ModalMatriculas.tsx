@@ -188,17 +188,6 @@ export default function ModalMatricula({
                             </select>
                         </div>
 
-                        {/* Data */}
-                        <div className={styles.field}>
-                            <label>Data da matrícula</label>
-
-                            <input
-                                name="data"
-                                type="date"
-                                required
-                            />
-                        </div>
-
                     </div>
 
                     {/* Erro */}

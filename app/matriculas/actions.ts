@@ -101,14 +101,16 @@ export async function createMatricula(formData: FormData) {
     }
 
     // Dados recebidos do formulário
+    const id = Number(formData.get("alunoId"))
+    const cursos = [Number(formData.get("cursosIds"))]
+    console.log(id, cursos)
+
     const matricula = {
-        alunoId: Number(formData.get("alunoId")),
-        cursoId: Number(formData.get("cursosId")),
-        data: formData.get("data"),
+        cursosIds: cursos,
     };
 
     try {
-        const response = await fetch(`${process.env.API_URL}/matriculas`, {
+        const response = await fetch(`${process.env.API_URL}/matriculas/${id}`, {
             method: "POST",
 
             headers: {
